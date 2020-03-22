@@ -1,455 +1,495 @@
-## jekyll-theme-H2O
+[Leia em Português](README-ptbr.md)
 
-基于Jekyll的博客主题模板，简洁轻量。
+# Typing
 
-另外，还有此主题的[Ghost版本](https://github.com/eastpiger/ghost-theme-H2O) by [eastpiger](https://github.com/eastpiger)
+![Jekyll site CI](https://github.com/williamcanin/typing-jekyll-template/workflows/Jekyll%20site%20CI/badge.svg?branch=master) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/williamcanin/typing-jekyll-template?style=flat-square) [![Build Status](https://travis-ci.org/williamcanin/typing-jekyll-template.svg?branch=master)](https://travis-ci.org/williamcanin/typing-jekyll-template) ![GitHub](https://img.shields.io/github/license/williamcanin/typing-jekyll-template?style=flat-square) ![GitHub repo size](https://img.shields.io/github/repo-size/williamcanin/typing-jekyll-template?style=flat-square) ![](https://img.shields.io/github/languages/top/williamcanin/typing-jekyll-template.svg?colorB=blue&style=flat-square) ![](https://img.shields.io/github/commit-activity/y/williamcanin/typing-jekyll-template.svg?style=flat-square) ![](https://img.shields.io/github/last-commit/williamcanin/typing-jekyll-template/master.svg?style=flat-square) ![](https://img.shields.io/github/watchers/williamcanin/typing-jekyll-template.svg?style=flat-square) ![](https://img.shields.io/github/stars/williamcanin/typing-jekyll-template.svg?style=flat-square) ![](https://img.shields.io/github/forks/williamcanin/typing-jekyll-template.svg?style=flat-square)
 
-### Preview
+![Typing Change Themes](https://raw.githubusercontent.com/williamcanin/typing-jekyll-template/master/_src/doc/readme/images/change_themes.gif)
 
-#### [在线预览 Live Demo →](http://liaokeyu.com/)
+## Introduction
 
-![](screenshot/jekyll-theme-h2o-realhome.jpg)
+**Typing**, is a template for [Jekyll](http://jekyllrb.com) created especially for those who want to have a blog and pages quickly and lightly. Keep things simple, my friend!
 
-![](screenshot/jekyll-theme-h2o-realm.png)
+Its interface is part of the "Keep It Simple" philosophy, precisely for high performance on all types of browsers and mobile devices.
 
-如果你喜欢这个博客模板，请在右上角star一下，非常感谢～
+You already have a template page for "Blog", "Projects", "Search", "Contact", "Tags", "Summary", "404" and "About", but you can change it as you wish by modifying the strings.
 
-If you like this theme or using it, please give a ⭐️ for motivation ;)
+On the **resume.md** page, you can print using the browser shortcut Ctrl + P or the button. Printing will eliminate useless parts such as the sidebar.
 
-如果想体验手机浏览效果，可以扫一下二维码：
+You will also have a template for posting to the "" welcome-to-jekyll.md "** file and will need to follow the header of that template. The file contains some information you can get to use on your website.
 
-![](screenshot/1494404591.png)
+The contact page (**_ pages/global/contact.md**) uses the feature [Formspree](https://formspree.io), you need to have an account on the service and add your **email** to the file **_data/informations.yml**.
 
-Using your smartphone to scan the QR Code
-
-### Features 特性
-
-#### CN
-
-- 代码高亮
-- 夜间模式
-- Disqus评论系统
-- 粉蓝两种主题色
-- 头图个性化底纹
-- 响应式设计
-- 社交图标
-- SEO标题优化
-- 文章标签索引
-- 博客文章搜索
-- 复制文章内容自动添加版权
-
-#### EN
-
-- Code highlight
-- Night mode
-- Disqus Comment System
-- Theme color: Blue & Pink
-- Hero Patterns
-- Responsive design
-- SNS Icon
-- Title SEO
-- Tags system
-- Search
-- Copyright text on copy event
-
-### Usage 快速开始
-
-首先你需要安装Jekyll，请查看文档: [快速指南](http://jekyll.com.cn/docs/quickstart/)
-
-如果你已经安装了Jekyll，请检查版本是否为3.0.x，你可以使用 ```gem update jekyll``` 命令进行升级。
-
-使用 ```gem install jekyll-paginate``` 或 ```sudo gem install jekyll-paginate``` 安装Jekyll的分页插件。
-
-> H2O主题基于Jekyll 3.2.1版本，不同版本之间可能存在部分差异，具体请参考[官方更新文档](https://jekyllrb.com/news/)
-
-点击右上角Fork按钮在你的Github上创建分支，或者```clone```到本地。
-
-``` git clone https://github.com/kaeyleo/jekyll-theme-H2O.git ```
-
-最后，在命令行输入 ```jekyll server``` 开启服务，就能在本地预览主题了。
-
-如果需要部署到线上环境，请参照配置文档的 **开始** 章节进行操作。
-
-### Document 配置文档
-
-#### CN
-
-- 开始
-	- [站点信息](#站点信息)
-	- [写一篇文章](#写一篇文章)
-- 组件
-	- [导航](#导航)
-	- [侧边栏](#侧边栏)
-	- [社交图标](#社交图标)
-	- [个人简介](#个人简介)
-	- [标签](#标签)
-	- [文章搜索](#文章搜索)
-	- [代码高亮](#代码高亮)
-	- [夜间模式](#夜间模式)
-- 个性化
-	- [博客封面、主题皮肤](#主题皮肤)
-	- [头图底纹](#头图底纹)
-- 高级部分
-	- [自定义](#自定义)
-- 集成服务
-	- [Disqus](#disqus)
-	- [Share.js](#sharejs)
-
-#### EN
-
-- Get Started
-	- [Site Settings](#站点信息)
-	- [Write Posts](#写一篇文章)
-- Components
-	- [Navigation Menu](#导航)
-	- [Sidebar](#侧边栏)
-	- [SNS Icons](#社交图标)
-	- [Personal Information](#个人简介)
-	- [Tags](#标签)
-	- [Search](#文章搜索)
-	- [Syntax Highlight](#代码高亮)
-	- [Night Mode](#夜间模式)
-- Style
-	- [Theme Color](#主题皮肤)
-	- [Hero Background Patterns](#头图底纹)
-- Advanced
-	- [Customization](#自定义)
-- Plugins
-	- [Disqus](#Disqus)
-	- [Share.js](#Share.js)
-
-
-You can easily get started by modifying _config.yml
-
-#### 站点信息
-
-你可以通用修改 `_config.yml` 文件来轻松的开始搭建自己的博客
-
-```
-# Site settings
-title: '廖柯宇的独立博客' # 你的博客网站标题
-description: '很高兴能在这里与你分享我对技术和生活的思考。' # 站点描述
-keyword: '廖柯宇, 廖柯宇的独立博客, 前端, 设计' # 网站关键词
-url: 'http://liaokeyu.com' # 站点url
-baseurl: ''
-
-# Build settings
-paginate: 6 # 一页放几篇文章
-paginate_path: 'page:num'
+```yml
+userdata:
+  email: "youremail@domain.com"
 ```
 
-其实大部分参数已经默认配置好了，你只需要通过文档了解它们，然后根据自己的需求去`_config.yml`文件里修改即可。
+Then you must change the type of plan you have in [Formspree](https://formspree.io) in the option:
 
-#### 写一篇文章
+```yml
+website:
+  ...
+  content:
+    ...
+    contact:
+      formspree:
+        plan: "free|paid"
+```
 
-文章一般都放在`_posts`文件夹里，每篇文章的开头都需要设置一些头信息：
+
+NOTE: The **paid** plan, where the form will be sent via AJAX, which will return a success or failure response, whether the email was delivered or not. The **free** plan, will not have a failed return if the message is not sent successfully. You can learn more at: [Formspree Plans](https://formspree.io/plans)
+
+In addition, all contents of the **_data/informations.yml** file should be changed to suit your needs and needs.
+
+> NOTE: Typing Jekyll Template does not support atomic compilation in Github Pages due to its own plug-in feature and some settings that the theme provides. You need to run the project clone on your machine, compile the site, and deploy it to the Github pages.
+
+## Features
+
+- [x] **Google Analytics**
+- [x] **Google Fonts**
+- [x] **Jekyll Search the blog page**
+- [x] **Print on the resume page**
+- [x] **Animated avatar on the sidebar**
+- [x] **404 Error Page**
+- [x] **Disqus [Accountant and Comments]**
+- [x] **Social network buttons**
+- [x] **Theme Options**
+- [x] **Enable and disable features**
+
+**Used Plugins:**
+
+* Plugins:
+  - jekyll-coffeescript
+  - jekyll-jsminify
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-youtube
+  - jekyll-tagging
+  - jekyll-sitemap
+  - jekyll-feed
+  - jemoji
+  - jekyll-email-protect
+  - jektify
+* From the project itself:
+  - Readingtime [Estimated Reading Time]
+  - Imager [Add image to post and pages]
+  - DateLang [Complete dates in each language]
+  - Badge [Add badges]
+  - Endpost [Create a horizontal line]
+
+## Requirements
+
+| Required        | How to verify       | How to install  |
+| --------------- | ------------------- | -------------- |
+| Git             | `git --version`     | [Git](http://git-scm.com/) |
+| Ruby            | `ruby -v`           | [Ruby](https://www.ruby-lang.org) |
+| Gem             | `gem -v`            | **Ruby** contains **Gem** |
+| Bundler         | `bundler -v`        | `gem install bundler` |
+| Yarn            | `yarn -v`           | [Yarn](https://yarnpkg.com/en/docs/install) |
+| Npm             | `npm -v`            | [Npm](https://www.npmjs.com/get-npm) |
+
+## Using
+
+1 - Cloning and entering the folder:
 
 ```
+$ git clone https://github.com/williamcanin/typing-jekyll-template.git "my_site"
+$ cd "my_site"
+```
+
+2 - Downloading Dependencies for Typing:
+
+```
+$ yarn install
+```
+
+> Note: If you experience problems with **yarn** during installation of the dependencies, you may also be using **npm** like this: `npm install`.
+
+3 - Build project to deploy:
+
+```
+$ yarn build
+```
+
+4 - Starting the Jekyll Service:
+
+```
+$ yarn serve
+```
+
+## File '.hidden'
+
+This file is specific to Linux systems, where are all files and folders that should be hidden so as not to visually pollute the project.
+
+## File 'index.md'
+
+Now the homepage is in the file "**index.md**" in the project root folder. Write a good opening.
+
+## Folder 'assets'
+
+This folder contains subfolders where some you don't need to fumble with, such as **css**, **js**, **vendor** and **json**. The folder **images** instead you should put the images to your website. Each subfolder of the **images** folder is self-explanatory.
+
+## Folder '_pages'
+
+The pages are found in the **_ pages/blogger** and **_ pages/global** folder.
+The **_ pages/blogger** folder is contained in Blog pages and the **_ pages/global** folder is where **about.md** and **projects.md** page is contained.
+
+If you do not want to work with the **about.md** and **projects.md** pages, we recommend leaving the **published** property to **false**. *NEVER DELETE FOLDER PAGES **blogger** and **global*** as they have unique properties that a normal page may not contain.
+
+If you don't want to have a blog on your website then you should disable it in the archive **_data/options.yml**, where you will find more information in the section [Files '_data/options.yml'](#file-_dataoptionsyml).
+
+To create a page is very simple. Using the following command, you create the header of a page in the **_ pages** directory, where all your created pages should be.
+
+### Creating a page
+
+```shell
+$ yarn page
+```
+
+The pages you create may or may not appear in your website menu. Just set the header **menu -> enable** property that looks like this:
+
+```markdown
+---
+layout: page
+order: #number
+title: "page1"
+date: 2019-10-07 22:57:30
+sitemap:
+  priority: 0.7
+  changefreq: 'monthly'
+  lastmod: 2019-10-07 22:57:30
+# Use icons of: https://fontawesome.com/icons
+# E.g: fa-briefcase
+icon: 
+menu:
+  enable: true
+  local: [default]
+script: []
+published: false
+permalink: # add permilink for page. E.g: /smallparty/
+---
+```
+
+Some properties you should not change, such as **layout**, **date** and **menu -> location**.
+
+In the **icon** property you can either put the icon [FontAwesome](https://fontawesome.com/icons) that is related to your created page, or simply leave it blank.
+
+The property **order**, you can put a number that (according to the other pages), to sort in the website menu.
+
+> Be sure to leave the **published** property to **true** for your page to appear.
+
+## Folder '_posts'
+
+The **_posts** folder is where you will put all your posts. Creating a post is as simple as creating a page.
+
+### Creating a post
+
+```shell
+$ yarn post
+```
+
+You will enter an intuitive console to enter the title name of your post. When creating, the header will look something like this:
+
+```markdown
 ---
 layout: post
-title: 'H2O theme for Jekyll'
-subtitle: '或许是最漂亮的Jekyll主题'
-date: 2017-04-18
-categories: 技术
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-postcover.jpg'
-tags: jekyll 前端开发 设计
+title: "mypost"
+date: 2019-10-07 23:06:50
+tags: ['tag1','tag2','tag3']
+published: false
+comments: false
+excerpted: |
+        Put here your excerpt
+day_quote:
+ title: "Put here title quote of the day"
+ description: |
+        "Put here your quote of the day"
+
+# Does not change and does not remove 'script' variable.
+script: [post.js]
 ---
 ```
 
-#### 导航
+Some properties you should not change, such as **layout**, **data** and **script**.
 
-博客顶部的导航栏信息需要以下面的格式进行配置：
+The **excerpted** property is text that you must set (if you wish) to appear in the posts listing of your website.
 
-```
-# Navigation links
-nav:
-  home: '/'
-  tags: '/tags.html'
-```
+The **day_quote** property is where you can put a phrase you like at the end of your post.
 
-导航链接需要写上完整的html文件名，它们都是放于根目录下的，如果自建文件夹，请务必在`exclude` 参数中增加自建文件夹的文件名:
+The **comments** property is to enable or disable comments on the post itself.
 
-```
-# Build settings
-exclude: ['node_modules', 'dev', 'package.json', '自定义的文件夹名字']
-```
+> Be sure to leave the **published** property to **true** for your post to appear.
 
-这样做是为了在Jekyll运行时排除某些文件被复制到运行文件`_site`里去。
+## Folder 'public'
 
-#### 侧边栏
+The **public** folder will be your entire compiled website. It will be the contents of this folder that you must upload to your hosting server.
 
-![](screenshot/jekyll-theme-h2o-sideBar.png)
+## Folder '_src'
 
-侧边栏分为两个部分：【个人简介】和【推荐标签】。当屏幕宽度小于960px时，侧边栏会被隐藏。
+This folder is where the whole template structure is. You don't need to change anything in this folder unless you want to corrupt the theme. :)
 
-#### 社交图标
+## Folder 'vendor'
 
-使用阿里的图标管理平台Iconfont整理了一套常用的社交图标用于博客的个人简介上，包括微博、知乎、掘金、简书、Github等十三个网站，并且对鼠标悬停时的样式颜色进行了优化。
+This folder will have all the dependencies for your template to be generated and work. It is created and populated with the **yarn install** command. Do not delete it.
 
-配置格式如下：
+## Template files you should NOT change or delete
 
-```
-# SNS settings 配置社交网站url
-sns:
-  weibo: '//weibo.com/lovecolcol'
-  juejin: '//juejin.im/user/57a6f434165abd006159b4cc'
-  instagram: '//www.instagram.com/steveliaocn'
-  github: '//github.com/kaeyleo'
-```
+- Gemfile
+- package.json
+- Rakefile
+- .yarnrc
+- .hidden
 
-sns属性可选参数：
+## Settings
 
-社交网站 | 参数
---------|----
-微博 | `weibo`
-推特 | `twitter`
-Github | `github`
-知乎 | `zhihu`
-掘金 | `juejin`
-豆瓣 | `douban`
-简书 | `jianshu`
-UI中国 | `uicn`
-领英 | `linkedin`
-Facebook | `facebook`
-Youtube | `youtube`
-Instagram | `instagram`
-Dribbble | `dribbble`
-Behance | `behance`
-Medium | `medium`
-VK | `vk`
+Well, now that you know about some folders and files, let's understand how to configure Typing to your liking. Come on.
 
-#### 个人简介
+### Folder 'CNAME'
 
-首页侧边栏和文章页面底部都会显示你的个人简介
+To learn about this file, read about CNAME records [HERE](https://support.google.com/a/answer/112037?hl=en)
 
-```
-# Author 配置博主信息
-author: 'Jack'
-nickname: 'xx'
-bio: '程序员'
-avatar: 'assets/img/avatar.jpg'
+### File '_config.yml'
+
+The first file you open to configure is **_config.yml**. In this file you will have some indication of blocks that should be changed, but basically you should change the **url** and **baseurl** property only.
+
+In **url** you enter the url of your domain. For example:
+
+```yml
+url: http://mysite.com
 ```
 
-#### 标签
+In **baseurl** you tell the subfolder your website is (if it is). For example:
 
-对侧边栏的标签模块进行相应配置：
-
-```
-# Tags
-recommend-tags: true
-recommend-condition-size: 12
-
+```yml
+baseurl: /site1
 ```
 
-Tags配置说明：
+> NOTE: Do not put slash at the end.
 
- 属性 | 参数 | 描述
------|-----|-------
-`recommend-tags` | `true`, `false` | 是否显示推荐标签
-`recommend-condition-size` | `12` 或其他数字 | 推荐标签个数限制
+It has the plugin settings [Jektify](https://jektify.github.io), you can also change to your liking.
+Another setting you could do is in the **reading_time** and **datelang** properties, changing their *locale* to their language.
 
-#### 文章搜索
+The supported languages for **reading_time** and **datelang** are:
 
-![](screenshot/jekyll-theme-h2o-search.png)
+- ch_CH - Chinese
+- de_DE - Deutschland
+- en_US - English
+- es_ES - Spanish
+- fr_FR - French
+- it_IT - Italian
+- ja_JP - Japan
+- pt_PT - Portuguese
+- ru_RU - Russian
 
-基于Jekyll服务器生成文章索引文件 `search.json` 为博客提供搜索服务。输入文章标题或与文章标签相关的关键字即可。
+Other changes you can make to **_ config.yml**:
 
-搜索功能默认是开启的，以卡片的样式显示在侧边栏底部。如需关闭请将配置文件 `_config.yml` 中 `search ` 属性的值改为 `false` 。
+Enables or disables blog pagination [default: true]:
 
-```
-# Search
-search: true
-```
-
-说明 | 参数
-----|-----
-开启搜索功能 | `true`
-关闭搜索功能 | `false`
-
-#### 代码高亮
-
-模板引入了[Prism.js](http://prismjs.com)，一款轻量、可扩展的代码语法高亮库。
-
-很多知名网站如[MDN](https://developer.mozilla.org/)、[css-tricks](https://css-tricks.com/)也在用它，就连 JavaScript 之父 [Brendan Eich](https://brendaneich.com/) 也在个人博客上使用。
-
-![代码高亮](http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-highlight.png)
-
-遵循 [HTML5](https://www.w3.org/TR/html5/grouping-content.html#the-pre-element) 标准，Prism 使用语义化的 `<pre>` 元素和 `<code>` 元素来标记代码区块：
-
-```
-<pre><code class="language-css">p { color: red }</code></pre>
+```yml
+pagination:
+  enabled: true
 ```
 
-在Markdown中你可以这样写：
+> NOTE: If you want to disable the pager, after making the above settings, you have to go to page **_pages/blogger/blog.md** and leave **pagination -> enable** to **false**.
 
+Changes the server port [default: 4000]:
 
-	 ```css
-		p { color: red }
-	 ```
-
-支持语言：
-
-- HTML
-- CSS
-- Sass
-- JavaScript
-- CoffeeScript
-- Java
-- C-like
-- Swift
-- PHP
-- Go
-- Python
-
-#### 夜间模式
-
-晚11点至次日凌晨6点自动开启夜间模式。如果不需要，则将配置文件 `_config.yml` 中 `nightMode ` 属性的值改为 `false` 即可。
-
-```
-# Night mode
-nightMode: true
+```yml
+port: 4000
 ```
 
-说明 | 参数
-----|-----
-开启夜间模式 | `true`
-关闭夜间模式 | `false`
+Change server host [default: localhost]:
 
-#### 主题皮肤
-
-![](screenshot/jekyll-theme-h2o-themecolor.jpg)
-
-支持两种主题颜色蓝色（默认）和粉色
-
-主要效果体现在首页博客封面、顶部导航栏的logo以及鼠标悬停时文字显示的颜色效果。
-
-```
-# theme color
-theme-color: 'default' # pink or default
+```yml
+host: localhost
 ```
 
-颜色 | 参数
-----|-----
-蓝色 | `default`
-粉色 | `pink`
+> The other property you do not need to dig through.
 
-如果你希望在博客封面显示图片，需要去index.html文件中的头信息中添加 `header-img` 配置：
+### File '_data/informations.yml'
 
-```
----
-layout: default
-home-title: Steven的博客
-description: 开发者，创造者
-header-img: assets/img/banner.jpg
----
-```
+The file **'_ data/informations.yml'** is a file that contains template information, most of which is the string that appears on the website. You should set the property values of this file to your liking.
 
-#### 头图底纹
+Some basic settings you will make in this file are:
 
-![](screenshot/jekyll-theme-h2o-heroPatterns.png)
+#### Change avatar
 
-在没有图片的情况下单纯显示颜色会不会太无趣了点？于是想到了加入底纹元素，底纹素材是SVG格式的（保存在css样式里），加载比图片快很多。六种底纹（电路、食物、云海、钻石等等）供你选择，配置如下：
+You must enter the name of your avatar, which should be in the folder **assets/images/avatar** in the following property:
 
-```
-# Hero background patterns
-postPatterns: 'circuitBoard'
+```yml
+sidebar:
+  avatar:
+    img: "your_first_photo_avatar.png|jpg"
+    flip:
+      img: "your_second_photo_avatar.png|jpg"
 ```
 
-`postPatterns` 属性参数配置：
+The avatar has a Flip animation, where you must enter a second image in the **flip -> img** property. If you do not want this animation, you can disable it by reading the section [File '_data/options.yml'](#file-_dataoptionsyml).
 
-底纹描述  |  参数
-------|------
-电路 | `circuitBoard`
-圆环 | `overlappingCircles`
-吃货日常：啃打鸡 | `food`
-土豪必备：钻石| `glamorous`
-圈圈叉叉 | `ticTacToe`
-中国风：云海 | `seaOfClouds`
+#### Change theme
 
-#### 自定义
+This is one of the coolest features of Typing, which is that you can quickly switch between multiple themes, and even [customize](#creating-your-own-theme) one (if you know a bit of CSS/SCSS) . Come on.
 
-主题开发使用的技术栈也比较简单：引入jQuery类库、使用Sass代替CSS编写样式，使用Gulp完成Sass的编译、CSS和JavaScript的代码合并压缩等任务。
+By default Typing comes with 5 (five) official themes, they are:
 
-如果你喜欢折腾，想对模板的代码进行修改，需要使用命令 `npm install` 安装 `package.json` 中的依赖，然后 `gulp` 一下即可开始你的自定义之旅。
+- typing
+- whiteglass
+- cloudysky
+- hacking
+- littlegirl
 
-在了解H2O主题的目录结构之前，确保你对[Jekyll目录结构](http://jekyll.com.cn/docs/structure/)有所了解。
+To use a theme, simply change the **theme** property in the **'_ data/informations.yml'** file and then compile your project again:
 
-```
-	.
-	├── _config.yml # 配置文件
-	├── _includes # 页面组件方便重用
-	|   ├── footer.html # 页脚
-	|   └── head.html # html文档的头部内容
-	|   └── header.html # 顶部菜单栏
-	|   └── pageNav.html # 文章列表分页组件
-	├── _layouts # 布局模板
-	|   ├── default.html # 默认模板
-	|   └── post.html # 文章页面模板
-	├── _posts # 这里放文章
-	|   ├── 2017-05-03-elements-of-javascript-style.md # 命名格式：年-月-日-文章标题.md
-	|   └── 2007-02-21-life-on-mars.md
-	├── _site # Jekyll将源码处理后生成的站点文件，里面的内容可直接发布
-	├── assets # 存放用于线上环境的静态资源，如需修改css和js文件请到dev文件夹
-	|   ├── css # dev文件夹中sass编译后的样式文件
-	|   └── fonts # 字体文件
-	|   └── icons # 图标文件
-	|   └── img #  图片文件
-	|   └── js # dev文件夹中处理后的脚本文件
-	├── dev # 开发文件
-	|   ├── js # 存放脚本源码
-	|   └── sass # 样式源码
-	|       └── app.scss # 整合下面的所有样式文件
-	|       └── base.scss # 引入字体、Reset部分样式
-	|       └── common.scss # 模板的主要样式
-	|       └── helper.scss # 工具样式
-	|       └── layouts.scss # 响应式布局
-	└── gulpfile.js # 自动化任务脚本
-	└── index.html # 模板首页
-	└── tags.html # 标签页面
-	└── 404.html # 404页面
-	└── package.json # 管理项目的依赖项
+```yml
+website:
+  ....
+  theme: "typing"
 ```
 
-值得注意的是，css及js的源码都在 `dev` 文件夹中，每一次保存 gulp 都会对它们进行处理并保存到 `assets` 文件夹以供 `_site` 上线环境使用。
+##### Know the face of the themes
 
-#### Disqus
+###### Typing
 
-[Disqus](https://disqus.com/)是一个第三方社交评论插件，体验相当不错。
+![Typing](https://raw.githubusercontent.com/williamcanin/typing-jekyll-template/master/_src/doc/readme/images/typing.png)
 
-在配置文件 `_config.yml` 中找到comments的相关配置，设置 `disqus` 参数为 `true` 打开评论功能（ `false` 为关闭），并且设置 `disqus_url`。
+###### Whiteglass
 
+![Whiteglass](https://raw.githubusercontent.com/williamcanin/typing-jekyll-template/master/_src/doc/readme/images/whiteglass.png)
+
+###### Cloudysky
+
+![Whiteglass](https://raw.githubusercontent.com/williamcanin/typing-jekyll-template/master/_src/doc/readme/images/cloudysky.png)
+
+###### Hacking
+
+![Hacking](https://raw.githubusercontent.com/williamcanin/typing-jekyll-template/master/_src/doc/readme/images/hacking.png)
+
+###### Littlegirl
+
+![Littlegirl](https://raw.githubusercontent.com/williamcanin/typing-jekyll-template/master/_src/doc/readme/images/littlegirl.png)
+
+#### Creating your own theme
+
+You will also have the file **_src/_sass/theme/custom.scss**, where you can create your own theme without changing Typing officers.
+
+> NOTE: The folder **_src** may be hidden due to the file **.hidden**. With your file manager, show hidden files or open every project in a preferred text editor. Only change template files if you know what you are doing.
+
+#### Comments on posts
+
+Typing uses [Disqus](https://disqus.com) to embed comments on the blog. To have the comments feature, you must inform the user of the in the file "**_ data/_informations.yml**":
+
+```yaml
+userdata:
+  disqus:
+    username: "my_user_disqus"
 ```
-# Comments
-comments:
-	disqus: true
-	disqus_url: 'https://your-disqus-username.disqus.com/embed.js'
+
+> NOTE: The commenting feature will appear if the Jekyll environment is a production environment, not a development environment, ie when executing the **yarn build** command.
+
+You can also enable or disable commenting for each post you make. In the post header, change the property:
+
+```yaml
+comments: true|false
 ```
 
-注：`disqus` 默认值为 `false`
+### File '_data/options.yml'
 
-#### Share.js
+This file contains options to enable and disable Typing features. In this file you should basically change as you like.
 
-为了让文章更方便地分享，使用了第三方分享插件[Share.js](https://github.com/overtrue/share.js)，支持一键分享到微博、QQ空间、QQ好友、微信、腾讯微博、豆瓣、Facebook、Twitter、Linkedin、Google+、点点等社交网站。
+#### Disabling Blog
 
+One of the things you might not want is a blogless website, in which case you should leave the property below to **false**:
+
+```yml
+blog:
+  enable: false
 ```
-# Share
-social-share: true # 开启或者关闭分享功能
-social-share-items: ['wechat', 'weibo', 'douban','twitter']
+
+After changing this property, you **MUST change** in the **_ pages/blogger/blog.md** file the following property to **false**:
+
+```yml
+menu:
+  enable: false
 ```
 
-### Contribution 贡献
+So the link **Blog** will not appear in the menu.
 
-Any types of contribution are welcome. Thanks.
+#### Turning avatar features on and off
 
-接受各种形式的贡献，包括不限于提交问题与需求，修复代码。等待您的 ```Pull Request```
+Another feature you may want to change is avatar animation. By default, FLIP animation is enabled. To disable this animation, you leave the low property with value of **false**:
 
-#### 感谢参与代码贡献的伙伴
+```yml
+sidebar:
+  ...
+  avatar:
+    ....
+    flip: false
+```
 
-- [Ray-Eldath](https://github.com/Ray-Eldath)
-- [sctop](https://github.com/sctop)
-- [bananaappletw](https://github.com/bananaappletw)
-- [moycat](https://github.com/moycat)
+If you don't want an avatar on your website, simply disable it in the option:
 
-### License 许可证
+```yml
+sidebar:
+  ...
+  avatar:
+    enable: false
+```
 
-Jekyll-Theme-H2O is licensed under [MIT](https://github.com/kaeyleo/jekyll-theme-H2O/blob/master/LICENSE).
+#### Enabling Terminal Simulator
+
+Another feature Typing acquired was a terminal simulator on the homepage. This is a visual matter only, as the terminal is not real.
+
+Mixing a project that resembles the past and at the same time the present.
+
+To enable the terminal simulator on the home page, just leave the same settings below:
+
+```yml
+home:
+  ...
+  terminal:
+    enable: true
+```
+
+Here's how this feature will behave in your project:
+
+![Terminal](https://raw.githubusercontent.com/williamcanin/typing-jekyll-template/master/_src/doc/readme/images/terminal.png)
+
+> There is much more functionality in the **_data/options.yml** file for you to explore :)
+
+## Demo
+
+If you want to see the project in action, click here. > [Demo](http://williamcanin.github.io/typing-jekyll-template/)
+
+## Questions
+
+Have your say about Typing Jekyll Template at:
+[Typing Jekyll Template - Issues](https://github.com/williamcanin/typing-jekyll-template/issues)
+
+## Versions
+
+You can download versions without creating a clone with Git. Go to [Releases](https://github.com/williamcanin/typing-jekyll-template/releases)
+
+## License and Copyrights
+
+License: [MIT License (MIT)](https://opensource.org/licenses/MIT)
+
+Copyright: William C. Canin | Copyright © 2017-2020
+
+*Você pode alterar a estrutura do Typing Jekyll Template conforme desejar, desde que não manipule ou remova os direitos autorais de William C.Canin no projeto*
+
+
+## Donation
+
+If you liked my work, buy me a coffee <3
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YBK2HEEYG8V5W&source)
+
+
+## Credits
+
+* Name: William C. Canin
+* Country: Brazil - SP
+* E-Mail: william.costa.canin@gmail.com
+* GitHub: [William Canin](http://github.com/williamcanin)
+* Personal page: [William Canin](http://williamcanin.github.com)

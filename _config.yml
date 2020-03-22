@@ -1,87 +1,119 @@
-# Site settings 配置站点
-title: '廖柯宇的独立博客'
-description: '昵称悟空，千禧一代，前端开发者/伪极客/灵魂摄影师，热爱技术&设计。很高兴能在这里与你分享我对技术和生活的思考。'
-keyword: '廖柯宇, 廖柯宇的独立博客, 廖柯宇的博客, 前端, 前端开发, 前端博客, javascript, vuejs, nodejs, 设计'
-url: '' # your host
+# the base hostname & protocol for your site, e.g. http://example.com
+url: "https://williamcanin.me"
+# the subpath of your site, e.g. /blog
+baseurl: "/typing-jekyll-template"
 
-# when build blog on server, if you don't need baseurl, you should leave this value blank.
-# 在服务器上建站时，如果你不需要子域名，请将这一格留空
-# if you're using GitHub Pages, set baseurl to your blog's .
-# 如果你在使用 GitHub Pages, 请将 baseurl 设置为你的网址的子域名
-# for example, if your site is "kaeyleo.github.io", then this url should leave blank.
-# 例如，当你的域名是 "kaeyleo.github.io"  时，这个 url 需要留空
-# but if your created a repo named "myblog", and the site is "kaeyleo.github.io/myblog", change baseurl to '/myblog'
-# 但是，如果你创建了一个叫 "myblog" 的网站，此时网址会变成 "kaeyleo.github.io/myblog" ，这时再将 baseurl 设置为 '/myblog'
-baseurl: ''
+# Plugins de player - Jektify
+jektify:
+  enable: true
+  open: true
+  toggle:
+    enable: true
+  spotify:
+    user: # "you_user_spotify"
+    text: "See me no Spotify"
+  sass:
+    jekyll: true
+    other:
+      dir: "way/to/your/SASS"
+  title:
+    enable: false
+    text: "Music name"
+  description:
+    enable: false
+    text: |
+      Jekyll plugin to generate html snippets for embedding Spotify Musics.
+      To listen to the full song, open your Spotify and start these musics.
 
-# Navigation links
-nav:
-  home: '/'
-  tags: '/tags.html'
 
-# Footer
-footer:
-  since: 2017
+# Attention! Do not change the information below as it is 
+# for development unless you know what you are doing.
 
-# Author 配置博主信息
-author: '廖柯宇'
-nickname: '悟空'
-bio: '前端开发者，热爱技术&设计，简单乐观爱创造'
-avatar: '/assets/img/profile.png'
+include: ['_blog','_pages']
 
-# Search
-search: true
-
-# Night mode
-nightMode: true
-
-# Comments 评论功能
-comments:
-  disqus: false
-  disqus_url: 'https://liaokeyu.disqus.com/embed.js'
-
-# MathJax 公式支持 by Ray-Eldath
-mathjax: true
-
-# Share
-social-share: true
-social-share-items: ['wechat', 'weibo', 'douban', 'twitter']
-
-# theme color 主题皮肤
-theme-color: 'default'  # pink or default
-
-# Post header background patterns (when the post no cover): circuitBoard, overlappingCircles, food, glamorous, ticTacToe, seaOfClouds
-postPatterns: 'circuitBoard'
-
-# SNS settings 配置社交网站
-# url: email, weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
-sns:
-  weibo: '//weibo.com/lovecolcol'
-  juejin: '//juejin.im/user/57a6f434165abd006159b4cc'
-  instagram: '//www.instagram.com/steveliaocn'
-  github: '//github.com/kaeyleo'
-
-# Tags 设置标签
-recommend-tags: true # whether or not display recommend-tags on the sidebar
-recommend-condition-size: 12 # a tag will be recommended if the size of it is more than this value
-
-# Build settings
-paginate: 6
-paginate_path: 'page:num'
-exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'README.md']
-
-# Markdown
 markdown: kramdown
 highlighter: rouge
 kramdown:
-  input: GFM
+  syntax_highlighter: rouge
 
-# RSS
-RSS: false
+permalink: /blog/:title/
 
-# Permalink
-# See: https://github.com/kaeyleo/jekyll-theme-H2O/issues/35
-permalink: /:year/:month/:day/:title.html
+layouts_dir: _src/_layouts
+includes_dir: _src/_includes
+plugins_dir: _src/_plugins
 
-# Plugins
-plugins: [jekyll-paginate]
+destination: public
+port: 4000
+host: localhost
+
+sass:
+  load_paths:
+  - _src/_sass
+  - node_modules
+  - vendor/node_modules
+  style: compressed
+
+feed:
+  path: feed.xml
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
+
+tag_page_layout: tag
+tag_page_dir: blog/tags
+tag_permalink_style: pretty
+
+imager:
+  dir_posts: "assets/images/posts"
+
+# Readingtime and Datelang
+## supported languages:
+### ch_CH - Chinese | de_DE - Deutschland | en_US - English
+### es_ES - Spanish | fr_FR - French | it_IT - Italian
+### ja_JP - Japan | pt_PT - Portuguese | ru_RU - Russian
+reading_time:
+  locale: en_US
+
+datelang:
+  locale: en_US
+  reload: true
+
+pagination:
+  enabled: true
+  debug: false
+  collection: 'posts'
+  sort_field: 'date'
+  sort_reverse: true
+  per_page: 5
+  permalink: '/:num/'
+  locale: ''
+  title: ':title - Page :num'
+  limit: 0
+  extension: html
+  indexpage: 'index'
+
+gist:
+  noscript: false
+
+exclude:
+  - temp
+  - .hidden
+  - node_modules
+  - _src
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - screenshot.png
+  - CHANGELOG
+  - COPYING
+  - package-lock.json
+  - package.json
+  - README.md
+  - README-ptbr.md
+  - gulpfile.js
+  - Rakefile
+  - yarn.lock
+  - Makefile
