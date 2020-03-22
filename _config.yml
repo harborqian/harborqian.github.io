@@ -28,5 +28,5 @@ plugins:
   - jekyll-sitemap
 
 # Custom variables
-owner : "HarborQian"
+owner : "Harbor Qian"
 year : "2020"
