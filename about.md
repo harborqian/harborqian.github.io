@@ -2,5 +2,4 @@
 layout: page
 title: About
 ---
-
-Something about me.
+Hello, this is HarborQian, performance verification engineer working computer graphics chips.
