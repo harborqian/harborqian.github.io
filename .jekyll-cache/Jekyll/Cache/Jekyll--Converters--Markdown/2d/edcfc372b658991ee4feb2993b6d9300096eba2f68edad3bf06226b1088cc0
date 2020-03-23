@@ -1,0 +1,18 @@
+I"�<h1 id="2025-goal">2025 Goal</h1>
+<h2 id="you-are-what-you-read">You are what you read.</h2>
+
+<h2 id="what-will-you-be-in-five-years">What will you be in five years?</h2>
+
+<h2 id="breakdown">BreakDown</h2>
+
+<p>| Header1 | Header2 | Header3 |
+|:——–|:——-:|——–:|
+| cell1   | cell2   | cell3   |
+| cell4   | cell5   | cell6   |
+|—-
+| cell1   | cell2   | cell3   |
+| cell4   | cell5   | cell6   |
+|=====
+| Foot1   | Foot2   | Foot3
+{: rules=”groups”</p>
+:ET

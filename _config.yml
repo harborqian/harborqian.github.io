@@ -21,6 +21,7 @@ defaults:
     values:
       layout: "post"
 
+markdown: kramdown
 future: true
 plugins:
   - jekyll-seo-tag
